@@ -1,17 +1,14 @@
 /* ============================================================
    NEWERLLELY — JS
-   1. Отправка формы заказа в WhatsApp
-   2. Lightbox для галереи
-   3. Плавное появление секций
    ============================================================ */
 
-/* ---------- 🔧 ЗАМЕНИ ЭТИ ДАННЫЕ НА СВОИ ---------- */
-const WHATSAPP_NUMBER = '79999999999';   // без + и пробелов
-const TELEGRAM_USER   = 'newerllely';    // без @
-/* ------------------------------------------------------ */
+/* ---------- 🔧 ЗАМЕНИ ЭТИ ДАННЫЕ ---------- */
+const WHATSAPP_NUMBER = '79999999999';
+const TELEGRAM_USER   = 'newerllely';
+/* ------------------------------------------- */
 
 
-/* ============ 1. ФОРМА ЗАКАЗА ============ */
+/* ============ 1. ФОРМА ============ */
 const form = document.getElementById('order-form');
 
 form.addEventListener('submit', (e) => {
@@ -33,15 +30,12 @@ form.addEventListener('submit', (e) => {
 ${data.comment || '—'}
   `.trim();
 
-  // Сохраняем локально
   const orders = JSON.parse(localStorage.getItem('nw_orders') || '[]');
   orders.push({...data, sentAt: new Date().toISOString()});
   localStorage.setItem('nw_orders', JSON.stringify(orders));
 
-  // Открываем WhatsApp с готовым сообщением
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
 
-  // Показываем благодарность
   form.innerHTML = `
     <div style="text-align:center; padding:60px 20px;">
       <h3 style="font-family:'Playfair Display',serif; font-size:32px; font-weight:400; margin-bottom:16px;">
@@ -57,9 +51,9 @@ ${data.comment || '—'}
 
 
 /* ============ 2. LIGHTBOX ============ */
-const lightbox     = document.getElementById('lightbox');
-const lightboxImg  = document.getElementById('lightbox-img');
-const lightboxClose= document.getElementById('lightbox-close');
+const lightbox      = document.getElementById('lightbox');
+const lightboxImg   = document.getElementById('lightbox-img');
+const lightboxClose = document.getElementById('lightbox-close');
 
 document.querySelectorAll('.gallery__item').forEach(item => {
   item.addEventListener('click', () => {
@@ -82,7 +76,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 
-/* ============ 3. ПЛАВНОЕ ПОЯВЛЕНИЕ ============ */
+/* ============ 3. REVEAL ============ */
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting){
