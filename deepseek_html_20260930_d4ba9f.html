@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Newerllely — персональные журналы</title>
+<meta name="description" content="Персональные журналы в стиле Vogue. Подарок, который останется навсегда.">
+<meta name="theme-color" content="#f5e8e4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__content">
+    <div class="brand">@newerllely</div>
+    <h1 class="hero__title">Персональные<br><em>журналы</em></h1>
+    <p class="hero__sub">Каждая история заслуживает красивой обложки. Создаём журналы о вас, ваших близких и моментах, которые хочется сохранить.</p>
+    <a href="#order" class="btn btn--primary">Заказать журнал</a>
+  </div>
+  <div class="hero__scroll">
+    <span></span>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about reveal">
+  <div class="container">
+    <p class="eyebrow">О нас</p>
+    <h2 class="h2">Мы делаем <em>журналы</em> о вас</h2>
+    <p class="about__text">
+      Это не просто фотокниги. Это редакционные истории — со стилем Vogue,<br>
+      тёплым текстом и вниманием к каждой детали.<br>
+      Идеальный подарок на день рождения, годовщину, свадьбу или просто так.
+    </p>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="gallery reveal">
+  <div class="container">
+    <p class="eyebrow">Наши работы</p>
+    <h2 class="h2">Несколько <em>страниц</em> из журналов</h2>
+    <div class="gallery__grid">
+      <div class="gallery__item gallery__item--tall" data-src="assets/work-1.jpg" style="background-image:url('assets/work-1.jpg')"></div>
+      <div class="gallery__item" data-src="assets/work-2.jpg" style="background-image:url('assets/work-2.jpg')"></div>
+      <div class="gallery__item" data-src="assets/work-3.jpg" style="background-image:url('assets/work-3.jpg')"></div>
+      <div class="gallery__item gallery__item--wide" data-src="assets/work-4.jpg" style="background-image:url('assets/work-4.jpg')"></div>
+      <div class="gallery__item" data-src="assets/work-5.jpg" style="background-image:url('assets/work-5.jpg')"></div>
+      <div class="gallery__item gallery__item--tall" data-src="assets/work-6.jpg" style="background-image:url('assets/work-6.jpg')"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Просмотр фото в полный экран -->
+<div class="lightbox hidden" id="lightbox">
+  <button class="lightbox__close" id="lightbox-close">✕</button>
+  <img class="lightbox__img" id="lightbox-img" src="" alt="">
+</div>
+
+<!-- ================= PRICE ================= -->
+<section class="price reveal" id="price">
+  <div class="container">
+    <p class="eyebrow">Прайс</p>
+    <h2 class="h2">Стоимость <em>журналов</em></h2>
+
+    <div class="price__grid">
+      <div class="price__col">
+        <h3 class="price__head">Журналы</h3>
+        <div class="price__table">
+          <div class="price__row price__row--head">
+            <span class="price__col1">Электронная работа</span>
+            <span class="price__col2">Печать</span>
+          </div>
+          <div class="price__row"><span class="price__col1">12 листов</span><span class="price__col2">700 ₽</span><span class="price__col3">+1200 ₽</span></div>
+          <div class="price__row"><span class="price__col1">14 листов</span><span class="price__col2">820 ₽</span><span class="price__col3">—</span></div>
+          <div class="price__row"><span class="price__col1">16 листов</span><span class="price__col2">940 ₽</span><span class="price__col3">+1400 ₽</span></div>
+          <div class="price__row"><span class="price__col1">18 листов</span><span class="price__col2">1060 ₽</span><span class="price__col3">—</span></div>
+          <div class="price__row"><span class="price__col1">20 листов</span><span class="price__col2">1180 ₽</span><span class="price__col3">+1600 ₽</span></div>
+          <div class="price__row"><span class="price__col1">22 листа</span><span class="price__col2">1300 ₽</span><span class="price__col3">—</span></div>
+          <div class="price__row"><span class="price__col1">24 листа</span><span class="price__col2">1420 ₽</span><span class="price__col3">+1800 ₽</span></div>
+        </div>
+        <p class="price__note">далее +60 ₽ за лист</p>
+      </div>
+
+      <div class="price__col">
+        <h3 class="price__head">Дополнительно</h3>
+        <ul class="price__list">
+          <li><span>Постер A5</span><span>150 ₽</span></li>
+          <li><span>Постер A4</span><span>250 ₽</span></li>
+          <li><span>Постер A3</span><span>350 ₽</span></li>
+        </ul>
+
+        <h3 class="price__head price__head--mt">Доставка</h3>
+        <ul class="price__list">
+          <li><span>По России</span><span>350 ₽</span></li>
+          <li class="price__list-text">По другим странам — через СДЭК, цена зависит от страны</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ORDER FORM ================= -->
+<section class="order reveal" id="order">
+  <div class="container">
+    <p class="eyebrow">Заказать</p>
+    <h2 class="h2">Соберём ваш <em>журнал</em></h2>
+    <p class="order__sub">Заполните форму — свяжемся в течение дня, обсудим детали и покажем примеры.</p>
+
+    <form class="form" id="order-form">
+      <div class="form__row">
+        <label class="field">
+          <span>Ваше имя</span>
+          <input type="text" name="name" required>
+        </label>
+        <label class="field">
+          <span>Телефон или Telegram</span>
+          <input type="text" name="contact" required>
+        </label>
+      </div>
+
+      <div class="form__row">
+        <label class="field">
+          <span>Повод</span>
+          <select name="occasion" required>
+            <option value="">Выберите...</option>
+            <option>День рождения</option>
+            <option>Годовщина</option>
+            <option>Свадьба</option>
+            <option>Рождение ребёнка</option>
+            <option>Просто так</option>
+            <option>Другое</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>К какому числу нужно</span>
+          <input type="date" name="date">
+        </label>
+      </div>
+
+      <div class="form__row">
+        <label class="field">
+          <span>Количество листов</span>
+          <select name="pages" required>
+            <option value="">Выберите...</option>
+            <option>12 листов — 700 ₽</option>
+            <option>14 листов — 820 ₽</option>
+            <option>16 листов — 940 ₽</option>
+            <option>18 листов — 1060 ₽</option>
+            <option>20 листов — 1180 ₽</option>
+            <option>22 листа — 1300 ₽</option>
+            <option>24 листа — 1420 ₽</option>
+            <option>Больше — обсуждаемо</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Что нужно?</span>
+          <select name="type" required>
+            <option value="">Выберите...</option>
+            <option>Только электронная версия</option>
+            <option>Электронная + печать</option>
+            <option>Электронная + печать + доставка</option>
+            <option>Ещё не решил(а)</option>
+          </select>
+        </label>
+      </div>
+
+      <label class="field">
+        <span>Расскажите о журнале</span>
+        <textarea name="comment" rows="5" placeholder="Для кого, что хотите видеть, какой стиль, ссылки на фото..."></textarea>
+      </label>
+
+      <button type="submit" class="btn btn--primary btn--block">Отправить заявку</button>
+
+      <p class="form__hint">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__left">
+      <div class="footer__brand">@newerllely</div>
+      <p class="footer__text">Персональные журналы в стиле Vogue.<br>Сделано с любовью.</p>
+    </div>
+    <div class="footer__socials">
+      <a href="https://t.me/newerllely" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://instagram.com/newerllely" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://wa.me/79999999999" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <div class="footer__qr">
+      <img src="assets/qr.png" alt="QR-код @newerllely">
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2026 @newerllely</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
